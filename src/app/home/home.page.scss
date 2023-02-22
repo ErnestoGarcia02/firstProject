@@ -19,6 +19,12 @@ img{
 //   border-radius: 100px!important;
 // }
 
+ion-grid{
+  background-color: #00761A;
+  border-radius: 25px;
+  margin-bottom: 70px;
+}
+
 ion-button{
   //background-color: #00761A;
   border-radius: 100px;
@@ -28,10 +34,18 @@ ion-button{
   display: block;
 }
 .btn-cerrar{
+  //Revisar este margin
   margin: 20px;
 }
+
+.grafica{
+  position: absolute;
+  object-position: bottom 0;
+}
+
+
 ion-col {
-    border: solid 1px #989595;
+    //border: solid 1px #989595;
     color: #fff;
     text-align: center;
   }
@@ -85,4 +99,8 @@ ion-col {
 
   ion-icon {
     font-size: 32px;
+  }
+
+  .modal-backdrop{
+    background-color: #00761A;
   }

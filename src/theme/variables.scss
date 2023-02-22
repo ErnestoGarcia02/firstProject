@@ -10,7 +10,8 @@
 :root {
   
   //Colores de la aplicación
-  --fondo: #1E1E1E;
+  --colorFondo: #1E1E1E;
+  --colorFondoCuadro: #00761A;
 
 
   /** primary **/
@@ -163,7 +164,7 @@
    */
 
   .ios body {
-    --ion-background-color: var(--fondo);
+    --ion-background-color: var(--colorFondo);
     --ion-background-color-rgb: 0,0,0;
 
     --ion-text-color: #ffffff;
@@ -207,7 +208,7 @@
    */
 
   .md body {
-    --ion-background-color: var(--fondo);
+    --ion-background-color: var(--colorFondo);
     --ion-background-color-rgb: 18,18,18;
 
     --ion-text-color: #ffffff;
