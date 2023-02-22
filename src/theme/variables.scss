@@ -1,10 +1,18 @@
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/theming/
+
+
+
 *{
   font-family: 'Poppins', sans-serif;
 }
 /** Ionic CSS Variables **/
 :root {
+  
+  //Colores de la aplicación
+  --fondo: #1E1E1E;
+
+
   /** primary **/
   --ion-color-primary: #3880ff;
   --ion-color-primary-rgb: 56, 128, 255;
@@ -155,7 +163,7 @@
    */
 
   .ios body {
-    --ion-background-color: #1E1E1E;
+    --ion-background-color: var(--fondo);
     --ion-background-color-rgb: 0,0,0;
 
     --ion-text-color: #ffffff;
@@ -199,7 +207,7 @@
    */
 
   .md body {
-    --ion-background-color: #1E1E1E;
+    --ion-background-color: var(--fondo);
     --ion-background-color-rgb: 18,18,18;
 
     --ion-text-color: #ffffff;
