@@ -8,7 +8,7 @@ img{
     display: block;    
 }
 .md ion-content {
-  --ion-background-color: green!important;
+  //--ion-background-color: green!important;
 }
 .barrita {
   
@@ -20,14 +20,16 @@ img{
 // }
 
 ion-button{
-  background-color: #00761A;
+  //background-color: #00761A;
   border-radius: 100px;
   height: 30px;
   width: 50%;
   margin: auto;
   display: block;
 }
-
+.btn-cerrar{
+  margin: 20px;
+}
 ion-col {
     border: solid 1px #989595;
     color: #fff;
@@ -59,4 +61,28 @@ ion-col {
         margin: auto;
         display: block; 
     }
+  }
+
+  ion-modal {
+    --height: 85%;
+    --border-radius: 16px;
+    --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
+  
+  ion-modal::part(backdrop) {
+    background: rgb(0, 0, 0);
+    opacity: 1;
+  }
+  
+  ion-modal ion-toolbar {
+    --background: rgb(14 116 144);
+    --color: white;
+  }
+
+  .custom-modal {
+    padding: 0 25px;
+  }
+
+  ion-icon {
+    font-size: 32px;
   }
