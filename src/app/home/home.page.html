@@ -1,12 +1,15 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Form
+      Inicio
     </ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content class="auth-form">
-  <ion-grid>
+  <div>
+    <img src="./assets/logoAbeja.png" />
+  </div>
+  <!-- <ion-grid>
     <ion-row>
       <ion-col align-self-center>
         <ion-button [routerLink]="['/registration']" expand="block" color="primary">Register</ion-button>
@@ -16,4 +19,47 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">{{info.humedad}} %</ion-col>
+      
+    </ion-row>
+  </ion-grid> -->
+
+  <!-- Mensaje bienvenida -->
+  <ion-grid [fixed]="true">
+    <ion-row>
+      <ion-col size="4">
+        <div>
+          <img src="./assets/logoAbeja.png" />
+        </div>
+      </ion-col>
+      <ion-col size="8">
+        <h2>Bienvenido al cuidado de tus plantas</h2>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Estado del jardín -->
+  <ion-grid [fixed]="true">
+    <ion-row>
+      <ion-col>
+        <h2>
+          Estado del jardín:
+        </h2>
+        <div>
+          <img src="./assets/logoAbeja.png" />
+        </div>
+        
+          <ion-progress-bar class="barrita" color="tertiary" value=".75"></ion-progress-bar>
+        
+        <h3>
+          Consumo de agua: {{info.Consumo}} lts
+        </h3>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-button shape="round">
+    Ver gráfica
+  </ion-button>
 </ion-content>

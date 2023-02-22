@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePage implements OnInit {
 
-  constructor() { }
+  public info: any = {};
+  public lista: number[] = [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6];
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
+    this.http.get("https://jardin-garcia-default-rtdb.firebaseio.com/maceta.json").subscribe(data => this.info = data);
+    
   }
 
 }

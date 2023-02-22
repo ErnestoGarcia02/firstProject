@@ -1,0 +1,62 @@
+div{
+    width: 100%;
+}
+img{
+    width: 100px;
+    height: auto;
+    margin: auto;
+    display: block;    
+}
+.md ion-content {
+  --ion-background-color: green!important;
+}
+.barrita {
+  
+  height: 30px;
+  border-radius: 100px;
+}
+// .progress{
+//   border-radius: 100px!important;
+// }
+
+ion-button{
+  background-color: #00761A;
+  border-radius: 100px;
+  height: 30px;
+  width: 50%;
+  margin: auto;
+  display: block;
+}
+
+ion-col {
+    border: solid 1px #989595;
+    color: #fff;
+    text-align: center;
+  }
+
+@media only screen and (min-width: 600px) {
+    img {
+        width: 100px;
+        height: auto;
+        margin: auto;
+        display: block; 
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    img {
+        width: 200px;
+        height: auto;
+        margin: auto;
+        display: block; 
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
+    img {
+        width: 300px;
+        height: auto;
+        margin: auto;
+        display: block; 
+    }
+  }
