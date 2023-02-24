@@ -9,7 +9,17 @@
   <div>
     <img src="./assets/logoAbeja.png" />
   </div>
+  <!-- Para mostrar los datos -->
+    <ion-list>
+      <ion-item *ngIf="data">
+      Humedad: {{data.humedad}}%. Humo: {{data.humo}}%
+      </ion-item>
+    </ion-list>
   <!-- <ion-grid>
+
+    
+    
+
     <ion-row>
       <ion-col align-self-center>
         <ion-button [routerLink]="['/registration']" expand="block" color="primary">Register</ion-button>
@@ -27,6 +37,7 @@
   </ion-grid> -->
 
   <!-- Mensaje bienvenida -->
+  
   <ion-grid [fixed]="true">
     <ion-row>
       <ion-col size="4">
@@ -55,7 +66,7 @@
           <ion-progress-bar class="barrita" color="tertiary" value=".75"></ion-progress-bar>
         
         <h3>
-          Consumo de agua: {{info.consumo}} lts
+          
         </h3>
       </ion-col>
     </ion-row>
@@ -63,6 +74,7 @@
   </ion-grid>
 
   <!-- Mostrar más info -->
+  <div class="fondoModal">
   <ion-modal #modal trigger="open-modal" class="custom-modal">
     <ng-template>
       <ion-content>
@@ -93,6 +105,7 @@
       </ion-content>
     </ng-template>
   </ion-modal>
+</div>
   <div class="grafica">
     <ion-button shape="round">Ver gráfica</ion-button>
   </div>
