@@ -9,35 +9,9 @@
   <div>
     <img src="./assets/logoAbeja.png" />
   </div>
-  <!-- Para mostrar los datos -->
-    <ion-list>
-      <ion-item *ngIf="data">
-      Humedad: {{data.humedad}}%. Humo: {{data.humo}}%
-      </ion-item>
-    </ion-list>
-  <!-- <ion-grid>
-
-    
-    
-
-    <ion-row>
-      <ion-col align-self-center>
-        <ion-button [routerLink]="['/registration']" expand="block" color="primary">Register</ion-button>
-        <span class="divider line one-line">or</span>
-        <span class="already">Already a user?</span>
-        <ion-button [routerLink]="['/login']" expand="block" color="danger">Sign In</ion-button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-  <ion-grid>
-    <ion-row>
-      <ion-col size="12">{{info.humedad}} %</ion-col>
-      
-    </ion-row>
-  </ion-grid> -->
 
   <!-- Mensaje bienvenida -->
-  
+
   <ion-grid [fixed]="true">
     <ion-row>
       <ion-col size="4">
@@ -62,52 +36,54 @@
         <div>
           <img src="./assets/logoAbeja.png" />
         </div>
-        
-          <ion-progress-bar class="barrita" color="tertiary" value=".75"></ion-progress-bar>
-        
-        <h3>
-          
+
+        <ion-progress-bar class="barrita" color="tertiary" value=".75"></ion-progress-bar>
+
+        <!-- Para mostrar los datos -->
+        <h3 *ngIf="data">
+          Humedad: {{data.humedad}}. Humo: {{data.humo}}
         </h3>
+        <h3 *ngIf="!data">
+          -
+        </h3>
+
       </ion-col>
     </ion-row>
-    
+
   </ion-grid>
 
-  <!-- Mostrar más info -->
-  <div class="fondoModal">
+  <!-- Mostrar más info con un modal -->
   <ion-modal #modal trigger="open-modal" class="custom-modal">
     <ng-template>
-      <ion-content>
-        <ion-toolbar color="transparent">
-          <ion-title>Datos del jardín</ion-title>
-          <ion-buttons slot="end">
-            <ion-button class="btn-cerrar" color="dark" (click)="modal.dismiss()">
-              <ion-icon name="close-outline"></ion-icon>
-            </ion-button>
-          </ion-buttons>
-        </ion-toolbar>
-        
-        <div>
-          <img src="./assets/logoAbeja.png" />
-        </div>
+      <div class="fondoContenidoModal">
+          <ion-toolbar color="transparent">
+            <ion-title>Datos del jardín</ion-title>
+            <ion-buttons slot="end">
+              <ion-button class="btn-cerrar" color="dark" (click)="modal.dismiss()">
+                <ion-icon name="close-outline"></ion-icon>
+              </ion-button>
+            </ion-buttons>
+          </ion-toolbar>
 
-        <ion-grid [fixed]="true" id="open-modal">
-          <ion-row>
-            <ion-col>
-              <h2>Nivel de humedad:</h2>
-            <ion-progress-bar class="barrita" color="tertiary" value=".75"></ion-progress-bar>
-              <h2>Consumo de agua:</h2>
-            <ion-progress-bar class="barrita" color="tertiary" value=".75"></ion-progress-bar>
-          </ion-col>
-          </ion-row>
-        </ion-grid>
+          <div>
+            <img src="./assets/logoAbeja.png" />
+          </div>
 
-      </ion-content>
+          <ion-grid [fixed]="true" id="open-modal">
+            <ion-row>
+              <ion-col>
+                  <h2>Nivel de humedad:</h2>
+                  <ion-progress-bar class="barrita" color="tertiary" value=".75"></ion-progress-bar>
+                  <h2>Consumo de agua:</h2>
+                  <ion-progress-bar class="barrita" color="tertiary" value=".75"></ion-progress-bar>           
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+      </div>
     </ng-template>
   </ion-modal>
-</div>
   <div class="grafica">
-    <ion-button shape="round">Ver gráfica</ion-button>
+    <ion-button shape="round" color="tertiary">Ver gráfica</ion-button>
   </div>
-  
+
 </ion-content>
