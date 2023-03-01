@@ -9,7 +9,7 @@ export class RealtimeDatabaseService {
   constructor(private db: AngularFireDatabase) { }
 
   getData() {
-    //maceta es el documento de la base de datos
-    return this.db.object('maceta').valueChanges();
+    //documento de la base de datos
+    return this.db.object('Flujo de Agua').valueChanges();
   }
 }
