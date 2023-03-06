@@ -45,7 +45,7 @@
 
           
         -->
-
+        <h4>Capacidad máxima: 5 litros</h4>
         <ion-progress-bar *ngIf="data" class="barrita" color="tertiary" [value]="data.porcentajeLitros/100"></ion-progress-bar>
         <ion-progress-bar *ngIf="!data" class="barrita" color="tertiary" value="0.40"></ion-progress-bar>
 
@@ -97,6 +97,7 @@
                   
                 -->
                   
+                  <h4>Capacidad máxima: 5 litros</h4>
                   <ion-progress-bar *ngIf="data" class="barrita" color="tertiary" [value]="data.porcentajeLitros/100"></ion-progress-bar>
                   <ion-progress-bar *ngIf="!data" class="barrita" color="tertiary" value="0.40"></ion-progress-bar>
 
@@ -114,7 +115,8 @@
     </ng-template>
   </ion-modal>
   <div class="grafica">
-    <ion-button shape="round" color="tertiary">Ver gráfica</ion-button>
+    <ion-button [routerLink]="['/grafica']" shape="round" color="tertiary">Ver gráfica</ion-button>
+    
   </div>
 
 </ion-content>
