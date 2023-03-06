@@ -1,3 +1,5 @@
+
+
 div{
     width: 100%;
 }
@@ -74,6 +76,7 @@ ion-col {
     --height: 50%;
     --border-radius: 16px;
     --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --background: #00761A;
   }
   
   ion-modal::part(backdrop) {
@@ -89,8 +92,8 @@ ion-col {
     font-size: 32px;
   }
 
-  .fondoContenidoModal {
-    background-color: #00761A;
-    height: 100%;
-    width: 100%;
-  }
+ion-content.background{
+  --background: url('/../assets/fondo.jpg') no-repeat 100% 100%;
+
+} 
+
