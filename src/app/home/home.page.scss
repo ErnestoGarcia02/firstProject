@@ -73,10 +73,11 @@ ion-col {
   }
 
   ion-modal {
-    --height: 50%;
+    --height: 70%;
     --border-radius: 16px;
     --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
     --background: #00761A;
+    
   }
   
   ion-modal::part(backdrop) {
@@ -86,6 +87,7 @@ ion-col {
   
   .custom-modal {
     padding: 0 25px;
+    
   }
 
   ion-icon {
