@@ -21,51 +21,47 @@
         </div>
       </ion-col>
       <ion-col size="8">
-        <h2>Bienvenido al cuidado de tus plantas</h2>
+        <h2>Bienvenido a tu aplicación de cuidado de plantas</h2>
       </ion-col>
     </ion-row>
   </ion-grid>
 
   <!-- Estado del jardín -->
-  <!-- <ion-button id="open-modal" expand="block">Open Card Modal</ion-button> -->
-  <ion-grid [fixed]="true" id="open-modal">
+  <!-- Jardín salón SM51 -->
+  <ion-grid [fixed]="true" [routerLink]="['/info-plantas']">
     <ion-row>
       <ion-col>
         <h2>
-          Estado del jardín:
+          Estado del jardín: SM51
         </h2>
         <div>
           <img src="./assets/jardin.png" />
         </div>
-        
-        <!-- 
-          
-          
-          IMPORTANTE:
-          Verificar si funciona correctamente el apartado de la división 
-
-          
-        -->
-        <h4>Capacidad máxima: 5 litros</h4>
-        <ion-progress-bar *ngIf="data" class="barrita" color="tertiary" [value]="data.porcentajeLitros/100"></ion-progress-bar>
-        <ion-progress-bar *ngIf="!data" class="barrita" color="tertiary" value="0.40"></ion-progress-bar>
-
-
-
-
-        
-        <!-- Para mostrar los datos -->
-        <h3 *ngIf="data">
-          Consumo: {{data.litros}}
-        </h3>
-        <h3 *ngIf="!data">
-          Consumo: 2 Lts
-        </h3>
-
       </ion-col>
     </ion-row>
 
   </ion-grid>
+
+  <!-- Termina Jardín SM51 -->
+
+  <!-- Jardín salón SM53 -->
+  <!-- <ion-button [routerLink]="['/grafica']" shape="round" color="tertiary">Ver gráfica</ion-button> -->
+  <!-- <ion-grid [fixed]="true" id="open-modal"> -->
+    <ion-grid [fixed]="true" [routerLink]="['/info-plantas-dos']">
+    <ion-row>
+      <ion-col>
+        <h2>
+          Estado del jardín: SM53
+        </h2>
+        <div>
+          <img src="./assets/jardin.png" />
+        </div>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+  <!-- Termina Jardín SM53 -->
 
   <!-- Mostrar más info con un modal -->
   <ion-modal #modal trigger="open-modal" class="custom-modal">
@@ -115,9 +111,4 @@
       </div>
     </ng-template>
   </ion-modal>
-  <div class="grafica">
-    <ion-button [routerLink]="['/grafica']" shape="round" color="tertiary">Ver gráfica</ion-button>
-  </div>
-
-  
 </ion-content>

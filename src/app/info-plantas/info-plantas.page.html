@@ -1,0 +1,144 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Inicio
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<!-- <ion-content class="auth-form"> -->
+  <ion-content class="background">
+  <div>
+    <img src="./assets/planta.png" />
+  </div>
+
+  <!-- Mensaje bienvenida -->
+
+  <ion-grid [fixed]="true">
+    <ion-row>
+      <ion-col size="4">
+        <div>
+          <img src="./assets/hoja.png" />
+        </div>
+      </ion-col>
+      <ion-col size="8">
+        <h2>Bienvenido al cuidado de tus plantas</h2>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Estado del jardín -->
+  <!-- <ion-button id="open-modal" expand="block">Open Card Modal</ion-button> -->
+  <ion-grid [fixed]="true">
+    <ion-row>
+      <ion-col>
+        <h2>
+          Estado del jardín: SM51
+        </h2>
+        <div>
+          <img src="./assets/jardin.png" />
+        </div>
+        
+        <!-- 
+          
+          
+          IMPORTANTE:
+          Verificar si funciona correctamente el apartado de la división 
+
+          
+        -->
+        <div class="capMax">
+        <h4>Capacidad máxima:</h4>
+            <ion-list >
+              <ion-item>
+                <ion-select 
+                  id="capMaxsm53"
+                  name="capMaxsm53" 
+                  interface="popover"
+                  (ionChange)="handleChange($event)"
+                  placeholder="Seleccionar capacidad máxima"
+                  [value]=capMaxsm51>
+
+                <ion-select-option
+                [value] = capacidad
+                *ngFor="let capacidad of capacidades"
+                >{{capacidad}}</ion-select-option>
+                
+              </ion-select>
+              </ion-item>
+            </ion-list>
+           <h4>litros</h4>
+          
+        </div>
+        <!--
+          AGREGARLE EL *ngIf="data"  
+          CAMBIAR EL 5 POR data.litros
+      -->
+        <ion-progress-bar class="barrita" color="tertiary" [value]="5/capMaxsm51"></ion-progress-bar>
+        <ion-progress-bar *ngIf="data" class="barrita" color="tertiary" value="0"></ion-progress-bar>
+        
+
+        <!-- Para mostrar los datos -->
+        <h3 *ngIf="data">
+          Consumo: {{data.litros}}
+        </h3>
+        <h3 *ngIf="!data">
+          Consumo: No hay información
+        </h3>
+        
+      </ion-col>
+    </ion-row>
+    
+    <div class="botonVolver" id="open-modal">
+      <ion-button shape="round" color="tertiary">Más info</ion-button>
+    </div>
+
+  </ion-grid>
+
+  <!-- Mostrar más info con un modal -->
+  <ion-modal #modal trigger="open-modal" class="custom-modal">
+    <ng-template>
+      <div class="fondoContenidoModal">
+          <ion-toolbar color="transparent">
+            <ion-title>Datos del jardín</ion-title>
+            <ion-buttons slot="end">
+              <ion-button class="btn-cerrar" color="dark" (click)="modal.dismiss()">
+                <ion-icon name="close-outline"></ion-icon>
+              </ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+
+          <div>
+            <img src="./assets/logoAbeja.png" />
+          </div>
+
+          <ion-grid [fixed]="true" id="open-modal">
+            <ion-row>
+              <ion-col>
+                  <h2>Porcentaje de consumo de agua:</h2>
+                  
+                  <h4>Capacidad máxima: {{capMaxsm51}} lts</h4>
+                  <ion-progress-bar *ngIf="data" class="barrita" color="tertiary" [value]="data.litros/capMaxsm51"></ion-progress-bar>
+                  <ion-progress-bar *ngIf="!data" class="barrita" color="tertiary" value="0"></ion-progress-bar>
+
+                  <h2 *ngIf="data">
+                    Consumo: {{data.litros}} lts
+                  </h2>
+                  <h2 *ngIf="!data">
+                    Consumo: No hay información
+                  </h2>
+                  
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+      </div>
+    </ng-template>
+  </ion-modal>
+
+  <div class="grafica">
+    <ion-button [routerLink]="['/grafica']" shape="round" color="tertiary">Ver gráfica</ion-button>
+  </div>
+
+</ion-content>

@@ -1,0 +1,113 @@
+
+
+div{
+  width: 100%;
+}
+img{
+  width: 100px;
+  height: auto;
+  margin: auto;
+  display: block;    
+}
+
+.barrita {
+height: 30px;
+border-radius: 100px;
+}
+
+ion-grid{
+background-color: #00761A;
+border-radius: 25px;
+margin-bottom: 15%;
+}
+
+ion-button{
+border-radius: 100px;
+height: 30px;
+width: 50%;
+margin: auto;
+display: block;
+}
+.btn-cerrar{
+margin: 20px;
+}
+
+.grafica{
+// position: absolute;
+// object-position: bottom 1;
+margin-bottom: 25px;
+}
+
+
+ion-col {
+//Referencia para las cuadrículas  
+//border: solid 1px #989595;
+  color: #fff;
+  text-align: center;
+}
+
+@media only screen and (min-width: 600px) {
+  img {
+      width: 100px;
+      height: auto;
+      margin: auto;
+      display: block; 
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  img {
+      width: 200px;
+      height: auto;
+      margin: auto;
+      display: block; 
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  img {
+      width: 300px;
+      height: auto;
+      margin: auto;
+      display: block; 
+  }
+}
+
+ion-modal {
+  --height: 70%;
+  --border-radius: 16px;
+  --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --background: #00761A;
+  
+}
+
+ion-modal::part(backdrop) {
+  background: rgb(0, 0, 0);
+  opacity: 1;
+}
+
+.custom-modal {
+  padding: 0 25px;
+  
+}
+
+ion-icon {
+  font-size: 32px;
+}
+
+ion-content.background{
+--background: url('/../assets/fondo.jpg') no-repeat 100% 100%;
+
+} 
+
+.botonVolver{
+  // position: absolute;
+  object-position: bottom 1;
+  margin-bottom: 25px;
+}
+
+.capMax{
+  display: flex;
+  flex-direction: row;
+  
+}

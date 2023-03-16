@@ -10,6 +10,6 @@ export class RealtimeDatabaseService {
 
   getData() {
     //documento de la base de datos
-    return this.db.object('Flujo de Agua').valueChanges();
+    return this.db.object('Flujo de Agua Sombra').valueChanges();
   }
 }

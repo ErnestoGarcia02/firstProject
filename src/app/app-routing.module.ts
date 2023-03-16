@@ -26,7 +26,15 @@ const routes: Routes = [
   {
     path: 'grafica',
     loadChildren: () => import('./grafica/grafica.module').then( m => m.GraficaPageModule)
+  },  {
+    path: 'info-plantas',
+    loadChildren: () => import('./info-plantas/info-plantas.module').then( m => m.InfoPlantasPageModule)
+  },
+  {
+    path: 'info-plantas-dos',
+    loadChildren: () => import('./info-plantas-dos/info-plantas-dos.module').then( m => m.InfoPlantasDosPageModule)
   }
+
 
 
 

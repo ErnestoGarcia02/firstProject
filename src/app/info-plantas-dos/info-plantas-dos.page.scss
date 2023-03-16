@@ -33,8 +33,9 @@ ion-button{
 }
 
 .grafica{
-  position: absolute;
-  object-position: bottom 0;
+  // position: absolute;
+  // object-position: bottom 1;
+  margin-bottom: 25px;
 }
 
 
@@ -73,7 +74,7 @@ ion-col {
   }
 
   ion-modal {
-    --height: 70%;
+    --height: 80%;
     --border-radius: 16px;
     --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
     --background: #00761A;
@@ -99,3 +100,14 @@ ion-content.background{
 
 } 
 
+.botonVolver{
+    // position: absolute;
+    object-position: bottom 1;
+    margin-bottom: 25px;
+  }
+
+  .capMax{
+    display: flex;
+    flex-direction: row;
+    
+  }

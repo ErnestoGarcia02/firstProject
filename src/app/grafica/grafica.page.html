@@ -1,6 +1,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Última semana</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Gráficas de consumo de agua</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -8,7 +11,7 @@
   <div class="ion-padding">
     <ion-card>
       <ion-card-header>
-        Gráfica de pastel
+        Consumo de hoy
       </ion-card-header>
       <ion-card-content>
         <canvas #doughnutCanvas style="position: relative; height: 20vh; width: 40vw"></canvas>
@@ -16,25 +19,14 @@
     </ion-card>
     <ion-card>
       <ion-card-header>
-        Line Chart
+        Consumo de la semana pasada
       </ion-card-header>
       <ion-card-content>
-        <canvas #doughnutCanvas style="position: relative; height: 20vh; width: 40vw"></canvas>
+        <canvas #lineCanvas style="position: relative; height: 20vh; width: 40vw"></canvas>
       </ion-card-content>
     </ion-card>
     
   </div>
-
-
-  <!-- <ion-datetime-button datetime="datetime"></ion-datetime-button>
-
-<ion-modal [keepContentsMounted]="true">
-  <ng-template>
-    <ion-datetime display-format="DD/MM/YYYY" id="dat" [(ngModel)]="myDate" (ionChange)="showdate()"></ion-datetime>
-  </ng-template>
-</ion-modal> -->
-
-
 
 <div class="botonVolver">
   <ion-button [routerLink]="['/home']" shape="round" color="tertiary">Volver a Inicio</ion-button>
