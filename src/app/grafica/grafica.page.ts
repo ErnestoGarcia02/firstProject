@@ -74,7 +74,7 @@ export class GraficaPage implements AfterViewInit {
     this.lineChart = new Chart(this.lineCanvas.nativeElement, {
       type: 'line',
       data: {
-        labels: ['Jueves', 'Viernes', 'Sábado', 'Domingo', 'Lunes', 'Martes', 'Miércoles'],
+        labels: ['Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo', 'Lunes'],
         datasets: [
           {
             label: 'Litros',
@@ -94,7 +94,7 @@ export class GraficaPage implements AfterViewInit {
             pointHoverBorderWidth: 2,
             pointRadius: 1,
             pointHitRadius: 10,
-            data: [8, 5, 12, 18, 20, 18, 10],
+            data: [6.7, 8.57, 8, 5, 12, 18, 17.5],
             spanGaps: false,
           }
         ]
