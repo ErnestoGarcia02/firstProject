@@ -59,7 +59,7 @@
                   interface="popover"
                   (ionChange)="handleChange($event)"
                   placeholder="Seleccionar capacidad máxima"
-                  [value]=capMaxsm51>
+                  [value]=capMax51>
 
                 <ion-select-option
                 [value] = capacidad
@@ -76,13 +76,14 @@
           AGREGARLE EL *ngIf="data"  
           CAMBIAR EL 5 POR data.litros
       -->
-        <ion-progress-bar class="barrita" color="tertiary" [value]="5/capMaxsm51"></ion-progress-bar>
+      
         <ion-progress-bar *ngIf="data" class="barrita" color="tertiary" value="0"></ion-progress-bar>
+        <ion-progress-bar *ngIf="!data" class="barrita" color="tertiary" [value]="5/capMax51"></ion-progress-bar>
         
 
         <!-- Para mostrar los datos -->
         <h3 *ngIf="data">
-          Consumo: {{data.litros}}
+          Consumo: {{data.litros51}} lts
         </h3>
         <h3 *ngIf="!data">
           Consumo: No hay información
@@ -119,12 +120,12 @@
               <ion-col>
                   <h2>Porcentaje de consumo de agua:</h2>
                   
-                  <h4>Capacidad máxima: {{capMaxsm51}} lts</h4>
-                  <ion-progress-bar *ngIf="data" class="barrita" color="tertiary" [value]="data.litros/capMaxsm51"></ion-progress-bar>
+                  <h4>Capacidad máxima: {{capMax51}} lts</h4>
+                  <ion-progress-bar *ngIf="data" class="barrita" color="tertiary" [value]="data.litros51/capMax51"></ion-progress-bar>
                   <ion-progress-bar *ngIf="!data" class="barrita" color="tertiary" value="0"></ion-progress-bar>
 
                   <h2 *ngIf="data">
-                    Consumo: {{data.litros}} lts
+                    Consumo: {{data.litros51}} lts
                   </h2>
                   <h2 *ngIf="!data">
                     Consumo: No hay información
@@ -138,7 +139,7 @@
   </ion-modal>
 
   <div class="grafica">
-    <ion-button [routerLink]="['/grafica']" shape="round" color="tertiary">Ver gráfica</ion-button>
+    <ion-button [routerLink]="['/grafica-dos']" shape="round" color="tertiary">Ver gráfica</ion-button>
   </div>
 
 </ion-content>

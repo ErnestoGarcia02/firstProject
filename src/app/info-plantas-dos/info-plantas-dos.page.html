@@ -76,14 +76,13 @@
           AGREGARLE EL *ngIf="data"  
           CAMBIAR EL 5 POR data.litros
       -->
-        
         <ion-progress-bar *ngIf="data" class="barrita" color="tertiary" [value]="data.litros/capMaxsm53"></ion-progress-bar>
         <ion-progress-bar *ngIf="!data" class="barrita" color="tertiary" [value]="5/capMaxsm53"></ion-progress-bar>
         
 
         <!-- Para mostrar los datos -->
         <h3 *ngIf="data">
-          Consumo: {{data.litros}}
+          Consumo: {{data.litros}} lts
         </h3>
         <h3 *ngIf="!data">
           Consumo: No hay información

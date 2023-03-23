@@ -7,34 +7,33 @@ import { DataService } from '../services/data.service';
 import { RealtimeDatabaseService } from '../services/realtime-database.service';
 
 @Component({
-  selector: 'app-grafica',
-  templateUrl: './grafica.page.html',
-  styleUrls: ['./grafica.page.scss'],
+  selector: 'app-grafica-dos',
+  templateUrl: './grafica-dos.page.html',
+  styleUrls: ['./grafica-dos.page.scss'],
 })
-export class GraficaPage implements AfterViewInit {
+export class GraficaDosPage implements AfterViewInit {
   @ViewChild('doughnutCanvas') private doughnutCanvas!: ElementRef;
   @ViewChild('lineCanvas') private lineCanvas!: ElementRef;
   doughnutChart: any;
   lineChart: any;
   data: any;
-
-  capMax: any;
-  consumo: any;
-  porcentaje:any;
+  capMax51: any;
+  consumo51: any;
+  porcentaje51:any;
   constructor(private infoService: DataService, private realService: RealtimeDatabaseService) { }
 
   ngOnInit() {
     this.realService.getData().subscribe(data=>{
       this.data = data,
-      this.infoService.consumo = this.data.litros
+      this.infoService.consumo51 = this.data.litros51
     });
   }
   ngAfterViewInit() {
-    this.capMax = this.infoService.capMax;
-    this.porcentaje = this.infoService.porcentaje;
-    console.log(this.capMax);
-    this.consumo = this.infoService.consumo;
-    console.log(this.consumo);
+    this.capMax51 = this.infoService.capMax51;
+    this.porcentaje51 = this.infoService.porcentaje51;
+    console.log(this.capMax51);
+    this.consumo51 = this.infoService.consumo51;
+    console.log(this.consumo51);
     this.doughnutChartMethod();
     this.lineChartMethod();
   }
@@ -48,7 +47,7 @@ export class GraficaPage implements AfterViewInit {
       datasets: [{
         label: 'litros',
         // Litros consumidos / capacidad máxima
-        data: this.getChartData(this.consumo, this.capMax),
+        data: this.getChartData(this.consumo51, this.capMax51),
         backgroundColor: [
           'rgba(255, 159, 64, 0.2)',
           
@@ -102,13 +101,13 @@ export class GraficaPage implements AfterViewInit {
     });
   }
 //data: [consumidos, capMax - consumidos]
-  getChartData(litrosConsumidos: number, capacidadMax: number):number[]{
-    if(litrosConsumidos>capacidadMax){
-      return [capacidadMax, 0];
+  getChartData(litrosConsumidos51: number, capacidadMax51: number):number[]{
+    if(litrosConsumidos51>capacidadMax51){
+      return [capacidadMax51, 0];
     }else{
       //data: [consumidos, capMax - consumidos]
       // return[litrosConsumidos, capacidadMax-litrosConsumidos]
-      return[litrosConsumidos, capacidadMax-litrosConsumidos]
+      return[litrosConsumidos51, capacidadMax51-litrosConsumidos51]
     }
   }
 

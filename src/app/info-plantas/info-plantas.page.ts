@@ -10,7 +10,7 @@ export class InfoPlantasPage implements OnInit {
 
   data: any; 
   
-  capMaxsm51 = 20; // Capacidad máxima predeterminada: 20 litros
+  capMax51 = 20; // Capacidad máxima predeterminada: 20 litros
   capacidades: number[]=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]; //Lista de capacidades
 
    constructor(private dataService: RealtimeDatabaseService) { }
@@ -23,6 +23,6 @@ export class InfoPlantasPage implements OnInit {
   }
 
   handleChange(ev: any) {
-    this.capMaxsm51 = ev.target.value;
+    this.capMax51 = ev.target.value;
   }
 }

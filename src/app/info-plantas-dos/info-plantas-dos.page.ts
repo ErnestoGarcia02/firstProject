@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import Decimal from 'decimal.js-light';
+// import { Script } from 'vm';
 import { DataService } from '../services/data.service';
 import { RealtimeDatabaseService } from '../services/realtime-database.service';
 
@@ -28,6 +30,8 @@ export class InfoPlantasDosPage implements OnInit {
   handleChange(ev: any) {
     this.capMaxsm53 = ev.target.value;
     this.infoService.capMax = this.capMaxsm53;
-    this.infoService.porcentaje = this.data.litros/this.capMaxsm53*100
+    this.infoService.porcentaje = this.data.litros/this.capMaxsm53*100;
+    
+    
   }
 }

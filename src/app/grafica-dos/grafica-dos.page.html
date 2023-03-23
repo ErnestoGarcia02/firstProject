@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Gráficas de consumo de agua</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="background">
+  <div class="ion-padding">
+    <ion-card>
+      <ion-card-header>
+        Consumo de hoy
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #doughnutCanvas style="position: relative; height: 20vh; width: 40vw"></canvas>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        Consumo de la semana pasada
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #lineCanvas style="position: relative; height: 20vh; width: 40vw"></canvas>
+      </ion-card-content>
+    </ion-card>
+    
+  </div>
+
+<div class="botonVolver">
+  <ion-button [routerLink]="['/home']" shape="round" color="tertiary">Volver a Inicio</ion-button>
+</div>
+
+</ion-content>

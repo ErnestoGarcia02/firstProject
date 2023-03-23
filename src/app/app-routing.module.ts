@@ -33,6 +33,10 @@ const routes: Routes = [
   {
     path: 'info-plantas-dos',
     loadChildren: () => import('./info-plantas-dos/info-plantas-dos.module').then( m => m.InfoPlantasDosPageModule)
+  },
+  {
+    path: 'grafica-dos',
+    loadChildren: () => import('./grafica-dos/grafica-dos.module').then( m => m.GraficaDosPageModule)
   }
 
 
