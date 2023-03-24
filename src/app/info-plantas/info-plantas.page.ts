@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import Decimal from 'decimal.js-light';
+// import { Script } from 'vm';
+import { DataService } from '../services/data.service';
 import { RealtimeDatabaseService } from '../services/realtime-database.service';
 
 @Component({
@@ -10,10 +13,10 @@ export class InfoPlantasPage implements OnInit {
 
   data: any; 
   
-  capMax51 = 20; // Capacidad máxima predeterminada: 20 litros
+  capMaxsm51 = 20; // Capacidad máxima predeterminada: 20 litros
   capacidades: number[]=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]; //Lista de capacidades
 
-   constructor(private dataService: RealtimeDatabaseService) { }
+  constructor(private dataService: RealtimeDatabaseService, private infoService: DataService) { }
 
   ngOnInit() {
     this.dataService.getData().subscribe(data => {
@@ -23,6 +26,8 @@ export class InfoPlantasPage implements OnInit {
   }
 
   handleChange(ev: any) {
-    this.capMax51 = ev.target.value;
+    this.capMaxsm51 = ev.target.value;
+    this.infoService.capMax51 = this.capMaxsm51;
+    this.infoService.porcentaje51 = this.data.litros51/this.capMaxsm51*100;
   }
 }

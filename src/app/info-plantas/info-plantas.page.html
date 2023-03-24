@@ -54,12 +54,12 @@
             <ion-list >
               <ion-item>
                 <ion-select 
-                  id="capMaxsm53"
-                  name="capMaxsm53" 
+                  id="capMaxsm51"
+                  name="capMaxsm51" 
                   interface="popover"
                   (ionChange)="handleChange($event)"
                   placeholder="Seleccionar capacidad máxima"
-                  [value]=capMax51>
+                  [value]=capMaxsm51>
 
                 <ion-select-option
                 [value] = capacidad
@@ -77,9 +77,9 @@
           CAMBIAR EL 5 POR data.litros
       -->
       
-        <ion-progress-bar *ngIf="data" class="barrita" color="tertiary" value="0"></ion-progress-bar>
-        <ion-progress-bar *ngIf="!data" class="barrita" color="tertiary" [value]="5/capMax51"></ion-progress-bar>
-        
+      <ion-progress-bar *ngIf="data" class="barrita" color="tertiary" [value]="data.litros51/capMaxsm51"></ion-progress-bar>
+      <ion-progress-bar *ngIf="!data" class="barrita" color="tertiary" [value]="5/capMaxsm51"></ion-progress-bar>
+
 
         <!-- Para mostrar los datos -->
         <h3 *ngIf="data">
@@ -120,17 +120,25 @@
               <ion-col>
                   <h2>Porcentaje de consumo de agua:</h2>
                   
-                  <h4>Capacidad máxima: {{capMax51}} lts</h4>
-                  <ion-progress-bar *ngIf="data" class="barrita" color="tertiary" [value]="data.litros51/capMax51"></ion-progress-bar>
+
+                  
+                  <h4>Capacidad máxima: {{capMaxsm51}} lts</h4>
+                  <ion-progress-bar *ngIf="data" class="barrita" color="tertiary" [value]="data.litros51/capMaxsm51"></ion-progress-bar>
                   <ion-progress-bar *ngIf="!data" class="barrita" color="tertiary" value="0"></ion-progress-bar>
 
+                  <h2 *ngIf="data">
+                    Consumo: {{data.litros51/capMaxsm51*100}} %
+                  </h2>
+                  <h2 *ngIf="!data">
+                    Consumo: No hay información
+                  </h2>
+                  
                   <h2 *ngIf="data">
                     Consumo: {{data.litros51}} lts
                   </h2>
                   <h2 *ngIf="!data">
                     Consumo: No hay información
                   </h2>
-                  
               </ion-col>
             </ion-row>
           </ion-grid>

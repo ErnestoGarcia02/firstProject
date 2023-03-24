@@ -17,7 +17,6 @@ export class GraficaPage implements AfterViewInit {
   doughnutChart: any;
   lineChart: any;
   data: any;
-
   capMax: any;
   consumo: any;
   porcentaje:any;

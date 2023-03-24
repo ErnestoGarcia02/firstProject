@@ -18,7 +18,6 @@ export class InfoPlantasDosPage implements OnInit {
 
   constructor(private dataService: RealtimeDatabaseService, private infoService: DataService) { }
 
-
   ngOnInit() {
     this.dataService.getData().subscribe(data => {
       this.data = data;
@@ -26,12 +25,9 @@ export class InfoPlantasDosPage implements OnInit {
       });
   }
 
-
   handleChange(ev: any) {
     this.capMaxsm53 = ev.target.value;
     this.infoService.capMax = this.capMaxsm53;
     this.infoService.porcentaje = this.data.litros/this.capMaxsm53*100;
-    
-    
   }
 }
