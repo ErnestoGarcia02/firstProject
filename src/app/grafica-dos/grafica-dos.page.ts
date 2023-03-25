@@ -18,27 +18,27 @@ export class GraficaDosPage implements AfterViewInit {
   lineChart: any;
   data: any;
   capMax51: any;
-  consumo51: any;
+  litros51: any;
   porcentaje51:any;
   constructor(private infoService: DataService, private realService: RealtimeDatabaseService) { }
 
   ngOnInit() {
     this.realService.getData().subscribe(data=>{
       this.data = data,
-      this.infoService.consumo51 = this.data.litros51
+      this.capMax51=this.data.capMax51;
+      this.litros51=this.data.litros51;
+      this.infoService.consumo51 = this.data.litros51;
+      this.doughnutChartMethod();
+      this.lineChartMethod();
     });
   }
   ngAfterViewInit() {
-    this.capMax51 = this.infoService.capMax51;
-    this.porcentaje51 = this.infoService.porcentaje51;
-    console.log(this.capMax51);
-    this.consumo51 = this.infoService.consumo51;
-    console.log(this.consumo51);
-    this.doughnutChartMethod();
-    this.lineChartMethod();
+
   }
   doughnutChartMethod(){
-
+    if(this.doughnutChart){
+      this.doughnutChart.destroy();
+    }
     this.doughnutChart = new Chart(this.doughnutCanvas.nativeElement, {
 
     type: 'doughnut',
@@ -47,7 +47,7 @@ export class GraficaDosPage implements AfterViewInit {
       datasets: [{
         label: 'litros',
         // Litros consumidos / capacidad máxima
-        data: this.getChartData(this.consumo51, this.capMax51),
+        data: this.getChartData(this.litros51, this.capMax51),
         backgroundColor: [
           'rgba(255, 159, 64, 0.2)',
           
@@ -70,6 +70,9 @@ export class GraficaDosPage implements AfterViewInit {
   }
 
   lineChartMethod() {
+    if(this.lineChart){
+      this.lineChart.destroy();
+    }
     this.lineChart = new Chart(this.lineCanvas.nativeElement, {
       type: 'line',
       data: {

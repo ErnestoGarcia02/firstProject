@@ -19,15 +19,17 @@ export class InfoPlantasPage implements OnInit {
   constructor(private dataService: RealtimeDatabaseService, private infoService: DataService) { }
 
   ngOnInit() {
-    this.dataService.getData().subscribe(data => {
-    this.data = data;
-    console.log(this.data);
-    });
+      this.dataService.getData().subscribe(data => {
+      this.data = data;
+      console.log(this.data);
+      this.capMaxsm51=this.data.capMax51;
+    });  
   }
 
   handleChange(ev: any) {
     this.capMaxsm51 = ev.target.value;
     this.infoService.capMax51 = this.capMaxsm51;
-    this.infoService.porcentaje51 = this.data.litros51/this.capMaxsm51*100;
+    this.dataService.updateCapMax(this.capMaxsm51, false);
+    // this.infoService.porcentaje51 = this.data.litros51/this.capMaxsm51*100;
   }
 }

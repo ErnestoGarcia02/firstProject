@@ -8,25 +8,14 @@ const routes: Routes = [
   //   loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   // },
   {
-    path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
-  },
-  {
-    path: 'registration',
-    loadChildren: () => import('./registration/registration.module').then( m => m.RegistrationPageModule)
-  },
-  {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: 'forgot-password',
-    loadChildren: () => import('./forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
-  },
-  {
     path: 'grafica',
     loadChildren: () => import('./grafica/grafica.module').then( m => m.GraficaPageModule)
-  },  {
+  },
+  {
     path: 'info-plantas',
     loadChildren: () => import('./info-plantas/info-plantas.module').then( m => m.InfoPlantasPageModule)
   },

@@ -4,14 +4,14 @@
       <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-title>
-      Inicio
+      Jardín de Sombra SM53
     </ion-title>
   </ion-toolbar>
 </ion-header>
 <!-- <ion-content class="auth-form"> -->
   <ion-content class="background">
   <div>
-    <img src="./assets/planta.png" />
+    <img src="./assets/gotaAgua.png" />
   </div>
 
   <!-- Mensaje bienvenida -->
@@ -20,7 +20,7 @@
     <ion-row>
       <ion-col size="4">
         <div>
-          <img src="./assets/hoja.png" />
+          <img src="./assets/planta.png" />
         </div>
       </ion-col>
       <ion-col size="8">
@@ -38,7 +38,7 @@
           Estado del jardín: SM53
         </h2>
         <div>
-          <img src="./assets/jardin.png" />
+          <img src="./assets/llaveAgua.png" />
         </div>
         
         <!-- 
@@ -124,7 +124,7 @@
                   <ion-progress-bar *ngIf="!data" class="barrita" color="tertiary" value="0"></ion-progress-bar>
 
                   <h2 *ngIf="data">
-                    Porcentaje de consumo: {{data.litros/capMaxsm53*100}} %
+                    Porcentaje de consumo: {{(data.litros/capMaxsm53*100)| number : '1.2-2'}} %
                   </h2>
                   <h2 *ngIf="!data">
                     Porcentaje de consumo: No hay información
