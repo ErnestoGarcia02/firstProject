@@ -83,7 +83,7 @@
 
         <!-- Para mostrar los datos -->
         <h3 *ngIf="data">
-          Consumo: {{data.litros51}} lts
+          Consumo: {{(data.litros51| number : '1.2-2')}} lts
         </h3>
         <h3 *ngIf="!data">
           Consumo: No hay información
@@ -134,7 +134,7 @@
                   </h2>
                   
                   <h2 *ngIf="data">
-                    Consumo: {{data.litros51}} lts
+                    Consumo: {{(data.litros51)| number : '1.2-2'}} lts
                   </h2>
                   <h2 *ngIf="!data">
                     Consumo: No hay información

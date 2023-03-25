@@ -82,7 +82,7 @@
 
         <!-- Para mostrar los datos -->
         <h3 *ngIf="data">
-          Consumo: {{data.litros}} lts
+          Consumo: {{(data.litros)| number : '1.2-2'}} lts
         </h3>
         <h3 *ngIf="!data">
           Consumo: No hay información
@@ -132,7 +132,7 @@
                   <!-- <p>Nota: Si el consumo es mayor al 100% quiere decir que has gastado más agua de la capacidad máxima</p> -->
 
                   <h2 *ngIf="data">
-                    Consumo: {{data.litros}} lts
+                    Consumo: {{(data.litros)| number : '1.2-2'}} lts
                   </h2>
                   <h2 *ngIf="!data">
                     Consumo: No hay información
